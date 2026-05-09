@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(39, 2, 61);
+}
+
+.feedback-message {
+    color: white;
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.cups{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.cup {
+    width: 120px;
+    height: 160px;
+  
+    -webkit-mask-image: url('assets/cup.svg');
+    mask-image: url('assets/cup.svg');
+  
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  
+    -webkit-mask-position: center;
+    mask-position: center;
+  
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.red {
+    background-color: rgb(255, 80, 80);
+}
+  
+.blue {
+    background-color: rgb(80, 148, 242);
+}
+  
+.green {
+    background-color: rgb(148, 255, 148);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 126);
+}
+
+.pink {
+    background-color: pink;
+}
+
+.orange {
+    background-color: rgb(255, 188, 64);
+}
