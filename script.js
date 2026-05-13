@@ -1,34 +1,33 @@
 const colors = ['red', 'blue', 'yellow','green', 'orange', 'pink'];
 
 let selectedCupIndex = null;
-let actualOrder = [0, 1, 2, 3, 4, 5];
-let currentOrder = [0, 1, 2, 3, 4, 5];
+let actualOrder = [...colors];
+let currentOrder = [...colors];
 
-const msg = document.querySelector(".feedback-message h1");
+const feedbackMessage = document.querySelector(".feedback-message h1");
 const cups = document.querySelectorAll(".cup"); 
 
-
 function updateFeedbackMessage(message) {
-    msg.textContent = message;
+    feedbackMessage.textContent = message;
 }
 
-function chooseOrder(index){
+function setActualOrder(index){
     actualOrder.sort(()=> Math.random() - 0.5);
 }
 
-function chooseInitialOrder(){
+function setInitialOrder(){
     currentOrder.sort(()=> Math.random() - 0.5);
     sortCups();
 }
 
 function sortCups(){;
     cups.forEach((cup, index)=>{
-        cup.className = `cup ${colors[currentOrder[index]]}`;
+        cup.className = `cup ${currentOrder[index]}`;
     })
     
 }
 
-function updateCups(cup1, cup2){
+function updateCurrentOrder(cup1, cup2){
     const temp = currentOrder[cup1];
     currentOrder[cup1] = currentOrder[cup2];
     currentOrder[cup2] = temp;
@@ -43,6 +42,7 @@ function analiseUpdate(){
             count++;
         }
     })
+
     if (count === colors.length){
         updateFeedbackMessage("Achou a ordem correta!");
     } else {
@@ -59,7 +59,7 @@ function selectCup(index) {
     }
 
     if (selectedCupIndex !== index) {
-        updateCups(selectedCupIndex, index);
+        updateCurrentOrder(selectedCupIndex, index);
         cups[selectedCupIndex].style.border = "none";
         selectedCupIndex = null;
     }
@@ -67,8 +67,8 @@ function selectCup(index) {
 
 
 function init(){
-    chooseOrder();
-    chooseInitialOrder();
+    setActualOrder();
+    setInitialOrder();
     updateFeedbackMessage("Encontre a ordem correta!");
 }
 
