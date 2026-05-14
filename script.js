@@ -27,11 +27,17 @@ function sortCups(){;
     
 }
 
+function swapCups(cup1, cup2){
+    const tempClass = cups[cup1].className;
+    cups[cup1].className = cups[cup2].className;
+    cups[cup2].className = tempClass;
+}
+
 function updateCurrentOrder(cup1, cup2){
     const temp = currentOrder[cup1];
     currentOrder[cup1] = currentOrder[cup2];
     currentOrder[cup2] = temp;
-    sortCups();
+    sortCups(cup1, cup2);
     analiseUpdate();
 }
 

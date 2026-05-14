@@ -1,6 +1,7 @@
 html, body {
     min-height: 80vh;
     margin: 0;
+    font-size: 20px;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 
 .feedback-message {
     color: white;
-    font-size: 3em;
+    font-size: 1.2em;
     width: 100%;
     text-align: center;
     margin-top: 10%;
